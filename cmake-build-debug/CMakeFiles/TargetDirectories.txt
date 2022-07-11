@@ -1,0 +1,3 @@
+/Users/apple/Desktop/google/Step/Программирование_C++/Домашнее_задание_ООП_телефоннаяКнига/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/apple/Desktop/google/Step/Программирование_C++/Домашнее_задание_ООП_телефоннаяКнига/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/apple/Desktop/google/Step/Программирование_C++/Домашнее_задание_ООП_телефоннаяКнига/cmake-build-debug/CMakeFiles/___.dir
