@@ -55,13 +55,8 @@ public:
     char *getDescription() const;
 
 
-   // void printConsole() const;
-   // void printFile() const;
-
-
-
-
-
+   void printConsole() const;
+   char* toString() const;
 };
 
 
