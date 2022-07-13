@@ -1,14 +1,14 @@
 #include <iostream>
 #include "Contact.h"
+#include <cstring>
 
 using namespace std;
 
 int main() {
     setlocale(LC_ALL, "rus");
 
-
-    new Contact("Munir", 1243);
-
-
+    Contact c1("Munir", 89873022923);
+    char* out = c1.toString();
+    puts(out);
     return 0;
 }

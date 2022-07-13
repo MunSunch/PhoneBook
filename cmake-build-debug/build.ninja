@@ -84,6 +84,12 @@ build CMakeFiles/___.dir/Contact.cpp.o: CXX_COMPILER______Debug /Users/apple/Des
   OBJECT_DIR = CMakeFiles/___.dir
   OBJECT_FILE_DIR = CMakeFiles/___.dir
 
+build CMakeFiles/___.dir/PhoneBook.cpp.o: CXX_COMPILER______Debug /Users/apple/Desktop/google/Step/Программирование_C++/Домашнее_задание_ООП_телефоннаяКнига/PhoneBook.cpp || cmake_object_order_depends_target____
+  DEP_FILE = CMakeFiles/___.dir/PhoneBook.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu++14
+  OBJECT_DIR = CMakeFiles/___.dir
+  OBJECT_FILE_DIR = CMakeFiles/___.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ___
@@ -92,7 +98,7 @@ build CMakeFiles/___.dir/Contact.cpp.o: CXX_COMPILER______Debug /Users/apple/Des
 #############################################
 # Link the executable ___
 
-build ___: CXX_EXECUTABLE_LINKER______Debug CMakeFiles/___.dir/main.cpp.o CMakeFiles/___.dir/Contact.cpp.o
+build ___: CXX_EXECUTABLE_LINKER______Debug CMakeFiles/___.dir/main.cpp.o CMakeFiles/___.dir/Contact.cpp.o CMakeFiles/___.dir/PhoneBook.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6
   OBJECT_DIR = CMakeFiles/___.dir
   POST_BUILD = :

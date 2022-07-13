@@ -3,4 +3,4 @@ project(___)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(___ main.cpp Contact.cpp Contact.h)
+add_executable(___ main.cpp Contact.cpp Contact.h PhoneBook.cpp PhoneBook.h)
