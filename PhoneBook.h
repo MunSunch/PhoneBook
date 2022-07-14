@@ -15,7 +15,8 @@ public:
     void sort();
     void remove(const unsigned int id);
     void show() const;
-    void printFile(const char* path);
+    void printFile(const char* path) const;
+    unsigned int getSize() const;
 };
 
 

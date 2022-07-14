@@ -3,7 +3,7 @@
 #include "Contact.h"
 
 const unsigned int BUF_SIZE = 256;
-unsigned long Contact::countContacts = 0;
+unsigned long Contact::var = 0;
 
 Contact::Contact(const char *name,
                  const char *surname,
@@ -20,7 +20,7 @@ Contact::Contact(const char *name,
                                                   strcpy(this->name, name);
                                                   strcpy(this->surname, surname);
                                                   strcpy(this->description, description);
-                                                  id = countContacts++;
+                                                  id = var++;
                                                   sizeContact = sizeof(*this);
                                             }
 Contact::Contact(const char *name,
@@ -62,7 +62,7 @@ Contact::Contact(const Contact& contact): name(new char[BUF_SIZE]),
                                                 strcpy(name, contact.name);
                                                 strcpy(surname, contact.surname);
                                                 strcpy(description, contact.description);
-                                                id = countContacts++;
+                                                id = var++;
                                                 sizeContact = sizeof(*this);
                                           }
 

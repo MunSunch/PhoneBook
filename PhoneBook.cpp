@@ -23,3 +23,14 @@ void PhoneBook::show() const
         arrayContacts[i].printConsole();
     }
 }
+
+unsigned int PhoneBook::getSize() const
+{
+    unsigned int size{0};
+    for(int i=0; i<countContacts; i++)
+    {
+        size += arrayContacts[i].sizeContact;
+    }
+    return size;
+}
+

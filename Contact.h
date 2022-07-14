@@ -12,11 +12,11 @@ class Contact {
 
     char* description;
 
-    static unsigned long countContacts;
-
-    unsigned int sizeContact;
+    static unsigned long var;
     unsigned long id;
 public:
+    unsigned int sizeContact;
+
     Contact(const char *name,
             const char *surname,
             unsigned long homePhoneNumber,
@@ -52,7 +52,6 @@ public:
     int getWorkPhoneNumber() const;
     int getMobilePhoneNumber() const;
     char *getDescription() const;
-
 
     void printConsole() const;
     char* toString() const;
