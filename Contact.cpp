@@ -17,12 +17,11 @@ Contact::Contact(const char *name,
                                             mobilePhoneNumber(mobilePhoneNumber),
                                             description(new char[BUF_SIZE])
                                             {
-                                              strcpy(this->name, name);
-                                              strcpy(this->surname, surname);
-                                              strcpy(this->description, description);
-                                              id = countContacts++;
-                                              sizeContact = sizeof(*this);
-                                              isCopy = false;
+                                                  strcpy(this->name, name);
+                                                  strcpy(this->surname, surname);
+                                                  strcpy(this->description, description);
+                                                  id = countContacts++;
+                                                  sizeContact = sizeof(*this);
                                             }
 Contact::Contact(const char *name,
                  const char *surname,
@@ -46,12 +45,18 @@ Contact::Contact(const char *name,
                                                            mobilePhoneNumber,
                                                            "UNKNOWN"){}
 
+Contact::Contact(): Contact("UNKNOWN", 0){}
+
+
+
+
+
 
 Contact::Contact(const Contact& contact): name(new char[BUF_SIZE]),
                                           surname(new char[BUF_SIZE]),
-                                          homePhoneNumber(homePhoneNumber),
-                                          workPhoneNumber(workPhoneNumber),
-                                          mobilePhoneNumber(mobilePhoneNumber),
+                                          homePhoneNumber(contact.homePhoneNumber),
+                                          workPhoneNumber(contact.workPhoneNumber),
+                                          mobilePhoneNumber(contact.mobilePhoneNumber),
                                           description(new char[BUF_SIZE])
                                           {
                                                 strcpy(name, contact.name);
@@ -59,8 +64,10 @@ Contact::Contact(const Contact& contact): name(new char[BUF_SIZE]),
                                                 strcpy(description, contact.description);
                                                 id = countContacts++;
                                                 sizeContact = sizeof(*this);
-                                                isCopy = true;
                                           }
+
+
+
 
 Contact::~Contact()
         {
@@ -114,16 +121,14 @@ char *Contact::getDescription() const {
 
 
 void Contact::printConsole() const {
-    const char div[] = ", ";
-    const char openBracket = '{';
-    const char closeBracket = '}';
-    std::cout << openBracket << "id=" << id << div
-              << "name=" << name << div
-              << "surname=" << surname << div
-              << "homePhoneNumber=" << homePhoneNumber << div
-              << "workPhoneNumber=" << workPhoneNumber << div
-              << "mobilePhoneNumber=" << mobilePhoneNumber << div
-              << "description=" << description << closeBracket << std::endl;
+    const char div[] = " ";
+    std::cout << id << div
+              << name << div
+              << surname << div
+              << homePhoneNumber << div
+              << workPhoneNumber << div
+              << mobilePhoneNumber << div
+              << description << std::endl;
 }
 char* Contact::toString() const{
     char* out = new char[BUF_SIZE];
@@ -153,8 +158,24 @@ char* Contact::toString() const{
     strcat(out, "\"");
     strcat(out, div);
 
-    strcat(out, (std::to_string(isCopy)).c_str());
-    strcat(out, div);
-
     return out;
+}
+
+void Contact::copy(const Contact &contact_src)
+{
+    delete[] this->name;
+    name = new char[BUF_SIZE];
+    strcpy(name, contact_src.name);
+
+    delete[] this->surname;
+    surname = new char[BUF_SIZE];
+    strcpy(surname, contact_src.surname);
+
+    homePhoneNumber = contact_src.homePhoneNumber;
+    workPhoneNumber = contact_src.workPhoneNumber;
+    mobilePhoneNumber = contact_src.mobilePhoneNumber;
+
+    delete[] this->description;
+    description = new char[BUF_SIZE];
+    strcpy(description, contact_src.description);
 }

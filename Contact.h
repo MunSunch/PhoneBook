@@ -16,8 +16,6 @@ class Contact {
 
     unsigned int sizeContact;
     unsigned long id;
-
-    bool isCopy;
 public:
     Contact(const char *name,
             const char *surname,
@@ -34,6 +32,7 @@ public:
             const char* description);
     Contact(const char *name,
             unsigned long mobilePhoneNumber);
+    Contact();
 
     Contact(const Contact& contact);
     ~Contact();
@@ -55,8 +54,10 @@ public:
     char *getDescription() const;
 
 
-   void printConsole() const;
-   char* toString() const;
+    void printConsole() const;
+    char* toString() const;
+    //  Копирование для уже инициализированного контакта значениями полей из другого контакта
+    void copy(const Contact &contact_src);
 };
 
 
