@@ -36,7 +36,7 @@ unsigned int PhoneBook::getSize() const
     return size;
 }
 
-void PhoneBook::printFile(const char* path)
+void PhoneBook::printFile(const char* path) const
 {
     FILE* out = fopen(path, "w");
     const char* format = "%u. {id = %u, name = %s, surname = %s, homeNumber = %lu, workNumber = %lu, mobileNumber = %lu, description = %s}";
