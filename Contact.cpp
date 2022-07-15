@@ -7,9 +7,9 @@ unsigned long Contact::var = 0;
 
 Contact::Contact(const char *name,
                  const char *surname,
-                 unsigned long homePhoneNumber,
-                 unsigned long workPhoneNumber,
-                 unsigned long mobilePhoneNumber,
+                 unsigned long long homePhoneNumber,
+                 unsigned long long workPhoneNumber,
+                 unsigned long long mobilePhoneNumber,
                  const char *description) : name(new char[BUF_SIZE]),
                                             surname(new char[BUF_SIZE]),
                                             homePhoneNumber(homePhoneNumber),
@@ -25,7 +25,7 @@ Contact::Contact(const char *name,
                                             }
 Contact::Contact(const char *name,
                  const char *surname,
-                 unsigned long workNumber,
+                 unsigned long long workNumber,
                  const char* description): Contact(name,
                                                    surname,
                                                    0,
@@ -33,7 +33,7 @@ Contact::Contact(const char *name,
                                                    workNumber,
                                                    description){}
 Contact::Contact(const char *name,
-                 unsigned long mobilePhoneNumber,
+                 unsigned long long mobilePhoneNumber,
                  const char* description): Contact(name,
                                                    "UNKNOWN",
                                                    0,
@@ -41,9 +41,9 @@ Contact::Contact(const char *name,
                                                    mobilePhoneNumber,
                                                    description){}
 Contact::Contact(const char *name,
-                 unsigned long mobilePhoneNumber): Contact(name,
-                                                           mobilePhoneNumber,
-                                                           "UNKNOWN"){}
+                 unsigned long long mobilePhoneNumber): Contact(name,
+                                                                mobilePhoneNumber,
+                                                                "UNKNOWN"){}
 
 Contact::Contact(): Contact("UNKNOWN", 0){}
 
@@ -85,13 +85,13 @@ void Contact::setSurname(char *surname) {
     delete[] this->surname;
     strcpy(this->surname, surname);
 }
-void Contact::setHomePhoneNumber(int homePhoneNumber) {
+void Contact::setHomePhoneNumber(long long homePhoneNumber) {
     Contact::homePhoneNumber = homePhoneNumber;
 }
-void Contact::setWorkPhoneNumber(int workPhoneNumber) {
+void Contact::setWorkPhoneNumber(long long workPhoneNumber) {
     Contact::workPhoneNumber = workPhoneNumber;
 }
-void Contact::setMobilePhoneNumber(int mobilePhoneNumber) {
+void Contact::setMobilePhoneNumber(long long mobilePhoneNumber) {
     Contact::mobilePhoneNumber = mobilePhoneNumber;
 }
 void Contact::setDescription(char *description) {
@@ -106,13 +106,13 @@ char *Contact::getName() const {
 char *Contact::getSurname() const {
     return surname;
 }
-int Contact::getHomePhoneNumber() const {
+long long Contact::getHomePhoneNumber() const {
     return homePhoneNumber;
 }
-int Contact::getWorkPhoneNumber() const {
+long long Contact::getWorkPhoneNumber() const {
     return workPhoneNumber;
 }
-int Contact::getMobilePhoneNumber() const {
+long long Contact::getMobilePhoneNumber() const {
     return mobilePhoneNumber;
 }
 char *Contact::getDescription() const {

@@ -6,9 +6,9 @@ class Contact {
     char* name;
     char* surname;
 
-    unsigned long homePhoneNumber;
-    unsigned long workPhoneNumber;
-    unsigned long mobilePhoneNumber;
+    unsigned long long homePhoneNumber;
+    unsigned long long workPhoneNumber;
+    unsigned long long mobilePhoneNumber;
 
     char* description;
 
@@ -19,19 +19,19 @@ public:
 
     Contact(const char *name,
             const char *surname,
-            unsigned long homePhoneNumber,
-            unsigned long workPhoneNumber,
-            unsigned long mobilePhoneNumber,
+            unsigned long long homePhoneNumber,
+            unsigned long long workPhoneNumber,
+            unsigned long long mobilePhoneNumber,
             const char *description);
     Contact(const char *name,
             const char *surname,
-            unsigned long workNumber,
+            unsigned long long workNumber,
             const char* description);
     Contact(const char *name,
-            unsigned long mobilePhoneNumber,
+            unsigned long long mobilePhoneNumber,
             const char* description);
     Contact(const char *name,
-            unsigned long mobilePhoneNumber);
+            unsigned long long mobilePhoneNumber);
     Contact();
 
     Contact(const Contact& contact);
@@ -40,17 +40,17 @@ public:
 
     void setName(char *name);
     void setSurname(char *surname);
-    void setHomePhoneNumber(int homePhoneNumber);
-    void setWorkPhoneNumber(int workPhoneNumber);
-    void setMobilePhoneNumber(int mobilePhoneNumber);
+    void setHomePhoneNumber(long long homePhoneNumber);
+    void setWorkPhoneNumber(long long workPhoneNumber);
+    void setMobilePhoneNumber(long long mobilePhoneNumber);
     void setDescription(char *description);
 
 
     char *getName() const;
     char *getSurname() const;
-    int getHomePhoneNumber() const;
-    int getWorkPhoneNumber() const;
-    int getMobilePhoneNumber() const;
+    long long getHomePhoneNumber() const;
+    long long getWorkPhoneNumber() const;
+    long long getMobilePhoneNumber() const;
     char *getDescription() const;
     unsigned long getID() const { return id;}
 
