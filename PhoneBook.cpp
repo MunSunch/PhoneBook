@@ -19,6 +19,16 @@ void PhoneBook::append(const Contact &new_contact)
     arrayContacts = new_arrayContacts;
 }
 
+void PhoneBook::remove(const unsigned long id)
+{
+    auto ptr = find(id);
+    if(ptr != NULL) {
+        (*ptr).copy(arrayContacts[countContacts - 1]);
+        arrayContacts[countContacts - 1].~Contact();
+        countContacts--;
+    }
+}
+
 void PhoneBook::show() const
 {
     for(int i=0; i<countContacts; i++){

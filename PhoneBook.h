@@ -12,10 +12,8 @@ public:
     void append(const Contact& contact);
     Contact *find(const unsigned long id)
     {
-        for(auto ptr = arrayContacts; ptr != arrayContacts+countContacts; ptr++)
-        {
-            if(ptr->getID() == id)
-            {
+        for(auto ptr = arrayContacts; ptr != arrayContacts+countContacts; ptr++) {
+            if(ptr->getID() == id) {
                 return ptr;
             }
         }

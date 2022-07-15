@@ -14,7 +14,13 @@ int main() {
 
     p1.append(c1);
     p1.append(c2);
-    p1.printFile("list.txt");
+
+
+
+    p1.remove(3);
+    p1.show();
+
+
 
     return 0;
 }
