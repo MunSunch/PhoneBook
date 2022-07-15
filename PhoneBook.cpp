@@ -1,4 +1,6 @@
+#include <cstdio>
 #include "PhoneBook.h"
+#include <iostream>
 
 PhoneBook::PhoneBook():arrayContacts(nullptr),
                        countContacts(0){}
@@ -34,3 +36,21 @@ unsigned int PhoneBook::getSize() const
     return size;
 }
 
+void PhoneBook::printFile(const char* path)
+{
+    FILE* out = fopen(path, "w");
+    const char* format = "%u. {id = %u, name = %s, surname = %s, homeNumber = %u, workNumber = %u, mobileNumber = %u, description = %s}";
+    for(int i=0; i<countContacts; i++)
+    {
+        fprintf(out, format, i+1,
+                             arrayContacts[i].getID(),
+                             arrayContacts[i].getName(),
+                             arrayContacts[i].getSurname(),
+                             arrayContacts[i].getHomePhoneNumber(),
+                             arrayContacts[i].getWorkPhoneNumber(),
+                             arrayContacts[i].getMobilePhoneNumber(),
+                             arrayContacts[i].getDescription());
+        fprintf(out, "\n", "");
+    }
+    fclose(out);
+}

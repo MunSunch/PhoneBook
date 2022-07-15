@@ -9,13 +9,13 @@ class PhoneBook {
     unsigned int countContacts;
 public:
     PhoneBook();
+
     void append(const Contact& contact);
-    char* find(const unsigned int id) const;
-    char* find(const char* name, const char* surname) const;
-    void sort();
+    Contact* find(const unsigned int id) const;
     void remove(const unsigned int id);
     void show() const;
-    void printFile(const char* path) const;
+    void printFile(const char* path);
+
     unsigned int getSize() const;
 };
 

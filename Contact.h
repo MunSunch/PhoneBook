@@ -52,6 +52,8 @@ public:
     int getWorkPhoneNumber() const;
     int getMobilePhoneNumber() const;
     char *getDescription() const;
+    unsigned long getID() const { return id;}
+
 
     void printConsole() const;
     char* toString() const;

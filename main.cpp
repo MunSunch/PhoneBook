@@ -15,8 +15,7 @@ int main() {
     p1.append(c1);
     p1.append(c2);
     p1.show();
-    cout << "size = " << p1.getSize() << endl;
-
+    p1.printFile("list.txt");
 
     return 0;
 }
