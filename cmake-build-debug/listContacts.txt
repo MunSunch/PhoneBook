@@ -1,0 +1,5 @@
+1. {id = 0, name = Munir, surname = UNKNOWN, homeNumber = 0, workNumber = 0, mobileNumber = 89873022923, description = UNKNOWN} 
+2. {id = 1, name = Andrey, surname = UNKNOWN, homeNumber = 0, workNumber = 0, mobileNumber = 89193011911, description = UNKNOWN} 
+3. {id = 2, name = Viktor, surname = UNKNOWN, homeNumber = 0, workNumber = 0, mobileNumber = 306120, description = монтажник} 
+4. {id = 4, name = Nikolay, surname = Voldyrev, homeNumber = 0, workNumber = 89531130670, mobileNumber = 0, description = работа} 
+5. {id = 10, name = Alex, surname = UNKNOWN, homeNumber = 0, workNumber = 0, mobileNumber = 12345, description = UNKNOWN} 

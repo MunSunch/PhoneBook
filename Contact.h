@@ -11,7 +11,6 @@ class Contact {
     unsigned long long mobilePhoneNumber;
 
     char* description;
-
     static unsigned long var;
     unsigned long id;
 public:
@@ -38,21 +37,39 @@ public:
     ~Contact();
 
 
-    void setName(char *name);
-    void setSurname(char *surname);
-    void setHomePhoneNumber(long long homePhoneNumber);
-    void setWorkPhoneNumber(long long workPhoneNumber);
-    void setMobilePhoneNumber(long long mobilePhoneNumber);
-    void setDescription(char *description);
 
 
-    char *getName() const;
-    char *getSurname() const;
-    long long getHomePhoneNumber() const;
-    long long getWorkPhoneNumber() const;
-    long long getMobilePhoneNumber() const;
-    char *getDescription() const;
-    unsigned long getID() const { return id;}
+    void setName(char *name) {
+        delete[] this->name;
+        strcpy(this->name, name);
+    }
+    void setSurname(char *surname) {
+        delete[] this->surname;
+        strcpy(this->surname, surname);
+    }
+    void setHomePhoneNumber(long long homePhoneNumber) {
+        this->homePhoneNumber = homePhoneNumber;
+    }
+    void setWorkPhoneNumber(long long workPhoneNumber) {
+        this->workPhoneNumber = workPhoneNumber;
+    }
+    void setMobilePhoneNumber(long long mobilePhoneNumber) {
+        this->mobilePhoneNumber = mobilePhoneNumber;
+    }
+    void setDescription(char *description) {
+        delete[] this->description;
+        strcpy(this->description, description);
+    }
+
+
+    char *getName() const { return name;}
+    char *getSurname() const {  return surname;}
+    long long getHomePhoneNumber() const {  return homePhoneNumber;}
+    long long getWorkPhoneNumber() const {  return workPhoneNumber;}
+    long long getMobilePhoneNumber() const {    return mobilePhoneNumber;}
+    char *getDescription() const {  return description;}
+    unsigned long getID() const {   return id;}
+
 
 
     void printConsole() const;

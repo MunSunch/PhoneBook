@@ -1,9 +1,13 @@
 #include <cstring>
 #include <iostream>
 #include "Contact.h"
+#include <iomanip>
 
-const unsigned int BUF_SIZE = 256;
-unsigned long Contact::var = 0;
+using std::setw;
+using std::left;
+
+const unsigned int BUF_SIZE{256};
+unsigned long Contact::var{0};
 
 Contact::Contact(const char *name,
                  const char *surname,
@@ -29,8 +33,8 @@ Contact::Contact(const char *name,
                  const char* description): Contact(name,
                                                    surname,
                                                    0,
-                                                   0,
                                                    workNumber,
+                                                   0,
                                                    description){}
 Contact::Contact(const char *name,
                  unsigned long long mobilePhoneNumber,
@@ -67,8 +71,6 @@ Contact::Contact(const Contact& contact): name(new char[BUF_SIZE]),
                                           }
 
 
-
-
 Contact::~Contact()
         {
             delete[] name;
@@ -77,58 +79,22 @@ Contact::~Contact()
         }
 
 
-void Contact::setName(char *name) {
-    delete[] this->name;
-    strcpy(this->name, name);
-}
-void Contact::setSurname(char *surname) {
-    delete[] this->surname;
-    strcpy(this->surname, surname);
-}
-void Contact::setHomePhoneNumber(long long homePhoneNumber) {
-    Contact::homePhoneNumber = homePhoneNumber;
-}
-void Contact::setWorkPhoneNumber(long long workPhoneNumber) {
-    Contact::workPhoneNumber = workPhoneNumber;
-}
-void Contact::setMobilePhoneNumber(long long mobilePhoneNumber) {
-    Contact::mobilePhoneNumber = mobilePhoneNumber;
-}
-void Contact::setDescription(char *description) {
-    delete[] this->description;
-    strcpy(this->description, description);
-}
-
-
-char *Contact::getName() const {
-    return name;
-}
-char *Contact::getSurname() const {
-    return surname;
-}
-long long Contact::getHomePhoneNumber() const {
-    return homePhoneNumber;
-}
-long long Contact::getWorkPhoneNumber() const {
-    return workPhoneNumber;
-}
-long long Contact::getMobilePhoneNumber() const {
-    return mobilePhoneNumber;
-}
-char *Contact::getDescription() const {
-    return description;
-}
-
-
 void Contact::printConsole() const {
-    const char div[] = " ";
-    std::cout << id << div
-              << name << div
-              << surname << div
-              << homePhoneNumber << div
-              << workPhoneNumber << div
-              << mobilePhoneNumber << div
-              << description << std::endl;
+    const char div[]{" "};
+    const int tab_id{3};
+    const int tab_name{20};
+    const int tab_surname{20};
+    const int tab_homePhoneNumber{20};
+    const int tab_workPhoneNumber{20};
+    const int tab_mobilePhoneNumber{20};
+    const int tab_description{50};
+    std::cout << left << setw(tab_id) << id << div
+              << left << setw(tab_name) << name << div
+              << left << setw(tab_surname) << surname << div
+              << left << setw(tab_homePhoneNumber) << homePhoneNumber << div
+              << left << setw(tab_workPhoneNumber) << workPhoneNumber << div
+              << left << setw(tab_mobilePhoneNumber) << mobilePhoneNumber << div
+              << left << setw(tab_description) << description << std::endl;
 }
 char* Contact::toString() const{
     char* out = new char[BUF_SIZE];
@@ -178,4 +144,6 @@ void Contact::copy(const Contact &contact_src)
     delete[] this->description;
     description = new char[BUF_SIZE];
     strcpy(description, contact_src.description);
+
+    id = contact_src.getID();
 }
